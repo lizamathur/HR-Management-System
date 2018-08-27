@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="a" extends="struts-default">
+	
+	
+		<global-exception-mappings>
+			<exception-mapping result="input" exception="java.lang.Throwable"></exception-mapping>
+			<exception-mapping result="exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="error" exception="java.lang.Error"></exception-mapping>
+			<exception-mapping result="runtime_exception" exception="java.lang.RuntimeException"></exception-mapping>
+			<exception-mapping result="null" exception="java.lang.NullPointerException"></exception-mapping>
+		</global-exception-mappings>
+	
+	
+		<action name="payment" class="com.employee.Salary" method="getDetailsOfAllEmployees">
+			<result name="success">/WEB-INF/paySalary.jsp</result>
+		</action>
+		
+		<action name="salary" class="com.employee.Salary" method="getMySalaryReceivedNotification">
+			<result name="success">/WEB-INF/getSalary.jsp</result>
+		</action>
+	
+		<action name="add">
+			<result name="success">/WEB-INF/addUnderEmployee.jsp</result>
+		</action>
+		
+		<action name="manage">
+			<result name="success">/WEB-INF/manageUnderEmployee.jsp</result>
+		</action>
+		
+		<action name="change">
+			<result name="success">/WEB-INF/changePassword.jsp</result>
+		</action>
+		
+		<action name="leave">
+			<result name="success">/WEB-INF/leave.jsp</result>
+		</action>
+		
+		<action name="toHomePage">
+			<result name="success">/WEB-INF/homePage.jsp</result>
+		</action>
+		
+		<action name="status" class="com.login.ManageLeaveApplication" method="showStatus">
+			<result name="success">/WEB-INF/leaveStatus.jsp</result>
+		</action>
+		
+		<action name="manageleave" class="com.login.ManageLeaveApplication" method="manageLeave">
+			<result name="success">/WEB-INF/manageLeave.jsp</result>
+		</action>
+		
+		<action name="leaveapplication" class="com.login.LeaveApplication" method="insertLeave">
+			<result name="success">/WEB-INF/leave.jsp</result>
+			<result name="input">/WEB-INF/leave.jsp</result>
+		</action>
+		
+		<action name="changePassword" class="com.login.ChangePassword" method="changePassword">
+			<result name="success">/WEB-INF/homePage.jsp</result>
+			<result name="input">/WEB-INF/changePassword.jsp</result>
+		</action>
+		
+		<action name="toDepartment" class="com.departments.Department" method="getDepartmentName">
+			<result name="success">/WEB-INF/department.jsp</result>
+			<result name="input">/WEB-INF/department.jsp</result>
+		</action>
+		
+		<action name="paymentToTable" class="com.employee.Salary" method="salaryToTable">
+			<result name="success">/WEB-INF/homePage.jsp</result>
+			<result name="input">/WEB-INF/homePage.jsp</result>
+		</action>
+
+		<action name="addEmployee" class="com.employee.Employee" method="addEmployee">
+			 <result name="input">/WEB-INF/addUnderEmployee.jsp</result>
+			<result name="success">/WEB-INF/addUnderEmployee.jsp</result>
+			<result name="registered">index.jsp</result>
+		</action>
+		
+		<action name="searchEmployee" class="com.employee.Employee" method="searchEmployee">
+			<result name="success">/WEB-INF/manageUnderEmployee.jsp</result>
+			<result name="input">/WEB-INF/manageUnderEmployee.jsp</result>
+		</action>
+		
+		<action name="manageEmployee" class="com.employee.Employee" method="manageEmployee">
+			<result name="success">/WEB-INF/manageUnderEmployee.jsp</result>
+			<result name="input">/WEB-INF/manageUnderEmployee.jsp</result>
+			<result name="deleted">/WEB-INF/homePage.jsp</result>
+			<result name="redirectToDept">/WEB-INF/department.jsp</result>
+		</action>	
+		
+		<action name="approveLeave" class="com.login.LeaveProcessing" method="processLeaveApplication">
+			<result name="success">/WEB-INF/homePage.jsp</result>
+		</action>
+		
+		<action name="rejectLeave" class="com.login.LeaveProcessing" method="processLeaveApplication">
+			<result name="success">/WEB-INF/homePage.jsp</result>
+		</action>
+		
+		
+		<action name="redirectToLoginPage" class="com.login.Login" method="redirectToLogin">
+			<result name="admin">/WEB-INF/homePage.jsp</result>
+			<result name="input">index.jsp</result>
+			<result name="success">/WEB-INF/homePage.jsp</result>
+			<result name="employee">/WEB-INF/homePage.jsp</result>
+		</action>	
+		
+		<action name="logout" method="logout" class="com.login.Login">
+			<result name="success">index.jsp</result>
+		</action>
+		
+		
+
+	</package>
+
+</struts>    
